@@ -1,8 +1,10 @@
 name := """stocks_analyzer_batch"""
 
-version := "1.0-SNAPSHOT"
+version := "1.0.0-core_1.0"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val core = (project in file("modules/stocks_analyzer_core")).enablePlugins(PlayJava).settings(javacOptions in (Compile,doc) += "-Xdoclit:none")
+
+lazy val root = (project in file(".")).enablePlugins(PlayJava).dependsOn(core).aggregate(core).settings(javacOptions in (Compile,doc) ++= Seq("-notimestamp", "-linksource"))
 
 scalaVersion := "2.11.7"
 

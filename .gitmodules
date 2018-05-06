@@ -1,0 +1,3 @@
+[submodule "modules/stocks_analyzer_core"]
+path = modules/stocks_analyzer_core
+url = https://github.com/chotto-martini/stocks_analyzer_core.git
